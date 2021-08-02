@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['auth:sanctum', 'ban'])->get('/', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'ban'])
+    ->get('/', \App\Http\Livewire\Dashboard::class)
+    ->name('dashboard');

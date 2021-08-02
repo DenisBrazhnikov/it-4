@@ -21,10 +21,6 @@ class Ban
             if (auth()->user()->blocked_at) {
                 auth('web')->logout();
 
-                $request->session()->invalidate();
-
-                $request->session()->regenerateToken();
-
                 return redirect()->route('login')->with('blocked', true);
             }
 

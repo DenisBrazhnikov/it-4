@@ -15,9 +15,12 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <!-- yes, I've included FA 4 just only for two icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @livewireStyles
 </head>
 <body>
     <div id="app">
@@ -77,7 +80,12 @@
 
         <main class="py-4">
             @yield('content')
+            @if( isset($slot) )
+                {{ $slot }}
+            @endif
         </main>
     </div>
+
+    @livewireScripts
 </body>
 </html>

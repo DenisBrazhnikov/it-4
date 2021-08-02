@@ -43,7 +43,7 @@ class Dashboard extends Component
 
         if ($block && isset($this->selectedUserIds[auth()->id()])) {
             auth('web')->logout();
-            session()->flush('blocked', true);
+            session()->flash('blocked', true);
 
             return redirect()->route('login');
         }
